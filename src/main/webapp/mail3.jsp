@@ -4,10 +4,10 @@
 
 <%
     final String to = request.getParameter("forget-email");
-    final String from = "akzbloodforeveryone@gmail.com";
+    final String from = "youremailid";
     final String subject="AKZ- Password reset Request";
     final String messg="Dear "+to+",\nThe request has been received to reset your password.\nIf you did not make the request,just ignore this mail.\nOtherwise click on the link below to reset your password: https://akzbloodforeveryone.herokuapp.com/reset_password.jsp";
-    final String pass = "FourMajPro1";
+    final String pass = "password";
     String host = "smtp.gmail.com";
     Properties props = new Properties();
     props.put("mail.smtp.host", host);
