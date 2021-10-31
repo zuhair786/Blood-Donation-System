@@ -6,10 +6,10 @@
     String result;
     final String to = request.getParameter("email");
     final String password = request.getParameter("pwd");
-    final String from = "akzbloodforeveryone@gmail.com";
+    final String from = "youremailid";
     final String subject="Registration Completed!";
     final String messg="Dear Sir/Madam,\nThank You for registering in our application.\nCame forward as a blood donor is a great kind of you.\nFor login to your profile, your password is "+password+".\nClick here to go to Login Page: https://akzbloodforeveryone.herokuapp.com/login.html";
-    final String pass = "FourMajPro1";
+    final String pass = "password";
     String host = "smtp.gmail.com";
     Properties props = new Properties();
     props.put("mail.smtp.host", host);
