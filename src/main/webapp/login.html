@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="webjars/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/register/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/register/style.css" rel="stylesheet">
+
+    <title>Login</title>
+  </head>
+  <body>
+    <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="index.jsp">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Login(For Donors)</li>
+    </ol>
+    </nav>
+    <section class="form-07" id="login">
+	 <form action="donors_login.jsp" method="POST" role="form">
+      <div class="container">
+        <div class="row">
+                <div class="col-sm-4 offset-sm-4">
+                  <div class="_pl_nb_df">
+                    <div class="_bg_cs">
+                      <h2>Login</h2>
+                    </div>
+                    <div class="form-group">
+                      <label>Email:</label>
+                      <input type="text" name="email" class="form-control" placeholder="Enter Mail ID" required >
+                    </div>
+
+                    <div class="form-group">
+					  <label>Phone Number:</label>
+                      <input type="text" name="phone" class="form-control" placeholder="Enter Your First Phone Number" required pattern="[789]{1}[0-9]{9}">
+                    </div>
+					
+					<div class="form-group">
+					  <label>Password:</label>
+                      <input type="password" name="password" class="form-control" placeholder="Enter Password"   required>
+                    </div>
+					
+					<div class="form-group">
+					  <input type="submit" class="btn btn-primary btn-lg" value="Login"/>
+					  <a href="register.html" style="position:absolute;right:0%;bottom:50px;">Sign Up</a>
+					  <p onclick="changeToForget()" style="cursor:pointer;position:absolute;right:0%;bottom:0px;">Forget Password</p>
+                    </div>
+					
+					<div class="form-group" id="show_message">
+                      <p style="color:red;font-family:arimo;">Reset Password has been send to your email</p>
+                    </div>
+					<div class="form-group" id="show_error">
+                      <p style="color:red;font-family:arimo;">Can not able to send email.Please try again later!</p>
+                    </div>
+					
+                  </div>
+                </div>
+          </div>
+        </div>
+      </div>
+	  </form>
+    </section>
+	<section class="form-07" id="password" style="display:none;">
+	 <form action="mail3.jsp" method="POST" role="form">
+      <div class="container">
+        <div class="row">
+                <div class="col-sm-4 offset-sm-4">
+                  <div class="_pl_nb_df">
+                    <div class="_bg_cs">
+                      <h2>Forget Password</h2>
+                    </div>
+                    <div class="form-group">
+                      <label>Email:</label>
+                      <input type="text" name="forget-email" class="form-control" placeholder="Enter Mail ID" required >
+                    </div>
+					<div class="form-group">
+					  <input type="submit" class="btn btn-primary btn-lg" value="Submit"/>
+					  <a href="register.html" style="position:absolute;right:0%;bottom:50px;">Sign Up</a>
+					  <p  onclick="changeToLogin()" style="cursor:pointer;position:absolute;right:0%;bottom:0px;">Sign In</p>
+                    </div>
+				  </div>
+				</div>
+		</div>
+	 </div>
+	 </form>
+	 </section>
+  </body>
+  <script>
+            const queryString = window.location.search;
+			const urlParams = new URLSearchParams(queryString);
+			const res = urlParams.get('response');
+			document.getElementById("show_message").style.display="none";
+			document.getElementById("show_error").style.display="none";
+			var ans=res.localeCompare("yes");
+			console.log(ans);
+			if(ans==0){
+			    document.getElementById("show_message").style.display="block";
+				  }
+			else{
+			    var ans1=res.localeCompare("no");
+				console.log(ans1);
+				if(ans1==0){
+				  document.getElementById("show_error").style.display="block";
+				  }
+				}
+			  
+	  function changeToForget(){
+	     document.getElementById("login").style.display="none";
+		 document.getElementById("password").style.display="block";
+		 }
+	  function changeToLogin(){
+	     document.getElementById("login").style.display="block";
+		 document.getElementById("password").style.display="none";
+		 }
+	  
+  </script>
+</html>

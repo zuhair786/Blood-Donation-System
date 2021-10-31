@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="webjars/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/register/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/register/style.css" rel="stylesheet">
+
+    <title>Donor Register</title>
+  </head>
+  <body>
+    <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="index.jsp">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Register(For Donors)</li>
+    </ol>
+    </nav>
+    <section class="form-07">
+	 <form action="uploadServlet" method="POST" role="form" enctype="multipart/form-data">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="_form_07_main">
+              <div class="row">
+                <div class="col-sm-4 cv-kl-bn">
+                  <div class="_pl_nb_df">
+                    <div class="_bg_cs">
+                      <h2>Register</h2>
+                    </div>
+                    <div class="form-group">
+                      <label>Donor Name(Give Full Name):</label>
+                      <input type="text" name="name" class="form-control" placeholder="Enter Name" required aria-required="true">
+                    </div>
+
+                    <div class="form-group">
+					  <label>Phone Number:</label>
+                      <input type="text" name="phone" class="form-control" placeholder="Enter Phone Number" required aria-required="true" pattern="[789]{1}[0-9]{9}">
+                    </div>
+					
+					<div class="form-group">
+					  <label>Second Phone Number:</label>
+                      <input type="text" name="phone1" class="form-control" placeholder="Enter Phone Number(Optional)"  aria-required="true" pattern="[789]{1}[0-9]{9}">
+                    </div>
+					
+					<div class="form-group">
+					  <label>Email:</label>
+                      <input type="email" name="email" class="form-control" placeholder="Enter Email ID"  required aria-required="true" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4 cv-kl-bn">
+                  <div class="_pl_nb_df">
+                    <div class="_bg_cs">
+                      <h2>Additional Details</h2>
+                    </div>
+                    <div class="form-group">
+                      <label>Blood Group</label>
+					  <input list="bld-grp" type="text" name="bld-grp" class="form-control" placeholder="Enter Your Blood Group" required/>
+                      <datalist id="bld-grp">
+					    <option value="O+"/>
+						<option value="A+"/>
+						<option value="A-"/>
+						<option value="B+"></option>
+						<option value="B-"><option>
+					  </datalist>
+                    </div>
+
+                    <div class="form-group">
+					  <label>Street:</label>
+                      <input type="text" name="street" class="form-control" placeholder="Enter Street Name"  required aria-required="true">
+                    </div>
+
+                   <div class="form-group">
+					  <label>Village/City Name:</label>
+                      <input type="text" name="city" class="form-control" placeholder="Enter Village/City Name"  required aria-required="true">
+                    </div>
+					
+					<div class="form-group">
+					  <label>District:</label>
+                      <input type="text" name="district" class="form-control" placeholder="Enter District Name"  required aria-required="true">
+                    </div>
+
+                  </div>
+                </div>
+				<div class="col-sm-4 cv-kl-bn">
+                  <div class="_pl_nb_df">
+                    <div class="_bg_cs">
+                      <h2>Additional Details</h2>
+                    </div>
+                    <div class="form-group">
+                      <label>Date of Birth</label>
+                      <input type="date" name="dob" class="form-control" placeholder="Enter DOB" required>
+                    </div>
+
+                    <div class="form-group">
+					  <label>Are You Available Anytime:</label>
+                      <input type="radio" name="avai"  value="yes">Yes
+					  <input type="radio" name="avai"  value="no">No
+                    </div>
+					
+					<div class="form-group">
+                      <label>If No,tell when you are free</label>
+                      <input type="text" name="avaino" class="form-control" placeholder="Ex: 4PM-8PM">
+                    </div>
+					
+					<div class="form-group">
+                      <label>Image(Your Photo)</label>
+                      <input type="file" name="image" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary btn-sm" value="Register"/>
+						<input type="reset" class="btn btn-primary btn-sm" value="Clear"/>
+						 <a href="login.html" style="position:absolute;right:0%;bottom:15px;">Sign In</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+	  </form>
+    </section>
+  </body>
+</html>
