@@ -27,9 +27,9 @@ try{
  %> 
  <%
     final String to = "";
-    final String from = "akzbloodforeveryone@gmail.com";
+    final String from = "youremailid";
     final String subject="Blood Donation Alert!!!";
-    final String pass = "FourMajPro1";
+    final String pass = "password";
     String host = "smtp.gmail.com";
     Properties props = new Properties();
     props.put("mail.smtp.host", host);
